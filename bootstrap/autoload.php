@@ -13,5 +13,4 @@ define('LARAVEL_START', microtime(true));
 | our application's PHP classes. It just feels great to relax.
 |
 */
-echo __DIR__;
 require __DIR__.'/../vendor/autoload.php';
