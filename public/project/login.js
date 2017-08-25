@@ -8,11 +8,11 @@ $(document)
                         rules: [
                             {
                                 type   : 'empty',
-                                prompt : 'Please enter your e-mail'
+                                prompt : '请输入邮箱地址'
                             },
                             {
                                 type   : 'email',
-                                prompt : 'Please enter a valid e-mail'
+                                prompt : '请输入正确的邮箱格式'
                             }
                         ]
                     },
@@ -21,16 +21,18 @@ $(document)
                         rules: [
                             {
                                 type   : 'empty',
-                                prompt : 'Please enter your password'
+                                prompt : '请输入密码'
                             },
                             {
                                 type   : 'length[6]',
-                                prompt : 'Your password must be at least 6 characters'
+                                prompt : '密码长度必须大于6个字节'
                             }
                         ]
                     }
                 }
             })
         ;
+
+        $('.image').attr('src', './project/images/logo.jpg');
     })
 ;

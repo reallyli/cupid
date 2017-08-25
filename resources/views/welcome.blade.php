@@ -8,15 +8,15 @@
         <script src="{{asset("js/jquery-3.1.1.min.js")}}"></script>
         <script src="{{asset("bootstrap-3.3.7-dist/js/bootstrap.min.js")}}"></script>
         <script src="{{asset("semantic/out/semantic.min.js")}}"></script>
-        <script src="{{asset("build/bundle-f1d5e865b2343c0026b1.js")}}"></script>
+        <script src="{{asset("bundle.js")}}"></script>
     </head>
     <body>
     <div class="ui middle aligned center aligned grid">
         <div class="column">
             <h2 class="ui teal image header">
-                <img src="assets/images/logo.png" class="image">
+                <img class="image">
                 <div class="content">
-                    Log-in to your account
+                   登录
                 </div>
             </h2>
             <form class="ui large form">
@@ -41,7 +41,7 @@
             </form>
 
             <div class="ui message">
-                New to us? <a href="#"><b>Sign Up</b></a>
+                注册新账号? <a href="#"><b>去注册</b></a>
             </div>
         </div>
     </div>
