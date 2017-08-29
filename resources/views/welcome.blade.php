@@ -5,12 +5,8 @@
         <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
         <link rel="stylesheet" type="text/css" href="{{asset("semantic/out/semantic.min.css")}}" >
         <link rel="stylesheet" type="text/css" href="{{asset("bootstrap-3.3.7-dist/css/bootstrap.min.css")}}" >
-        <script src="{{asset("js/jquery-3.1.1.min.js")}}"></script>
-        <script src="{{asset("bootstrap-3.3.7-dist/js/bootstrap.min.js")}}"></script>
-        <script src="{{asset("semantic/out/semantic.min.js")}}"></script>
-        <script src="{{asset("bundle.js")}}"></script>
     </head>
-    <body>
+    <body class="login-body">
     <div class="ui middle aligned center aligned grid">
         <div class="column">
             <h2 class="ui teal image header">
@@ -46,6 +42,7 @@
         </div>
     </div>
     @include('public/footer')
+    @include('public/script')
     </body>
 </html>
 
