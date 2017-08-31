@@ -11,7 +11,7 @@
             </div>
 
             <div class="ui text container">
-                <h1 class="ui inverted header">
+                <h1 class="ui inverted header animated bounce">
                     Imagine-a-Company
                 </h1>
                 <h2>Do whatever you want when you want to.</h2>
@@ -23,20 +23,20 @@
             <div class="ui middle aligned stackable grid container">
                 <div class="row">
                     <div class="eight wide column">
-                        <h3 class="ui header">We Help Companies and Companions</h3>
-                        <p>We can give your company superpowers to do things that they never thought possible. Let us delight your customers and empower your needs...through pure data analytics.</p>
-                        <h3 class="ui header">We Make Bananas That Can Dance</h3>
-                        <p>Yes that's right, you thought it was the stuff of dreams, but even bananas can be bioengineered.</p>
+                        <h3 class="ui header">我的技能展示</h3>
+                        <canvas id="mySkills" width="400" height="400"></canvas>
                     </div>
                     <div class="six wide right floated column">
-                        <img src="" class="ui large bordered rounded image">
+                        <h3 class="ui header">我的健身计划</h3>
+                        {{--<img src="" class="ui large bordered rounded image">--}}
+                        <canvas id="myChart" width="400" height="400"></canvas>
                     </div>
                 </div>
-                <div class="row">
-                    <div class="center aligned column">
-                        <a class="ui huge button">Check Them Out</a>
-                    </div>
-                </div>
+                {{--<div class="row">--}}
+                    {{--<div class="center aligned column">--}}
+                        {{--<a class="ui huge button">Check Them Out</a>--}}
+                    {{--</div>--}}
+                {{--</div>--}}
             </div>
         </div>
 
@@ -76,5 +76,79 @@
 
 
 @section('script')
+    <script>
+        var ctx = $("#myChart");
+        var mySkills = $("#mySkills");
+        $.ajax({
+            "url":"front/getSkills",
+            "method":"get",
+            "data":{"type":1},
+            "dataType":"json",
+            "success":function (data) {
+//                var dataObj=eval("("+data+")");
+            }
 
+        });
+        var myChart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
+                datasets: [{
+                    label: '# of Votes',
+                    data: [12, 19, 3, 5, 2, 3],
+                    backgroundColor: [
+                        'rgba(255, 99, 132, 0.2)',
+                        'rgba(54, 162, 235, 0.2)',
+                        'rgba(255, 206, 86, 0.2)',
+                        'rgba(75, 192, 192, 0.2)',
+                        'rgba(153, 102, 255, 0.2)',
+                        'rgba(255, 159, 64, 0.2)'
+                    ],
+                    borderColor: [
+                        'rgba(255,99,132,1)',
+                        'rgba(54, 162, 235, 1)',
+                        'rgba(255, 206, 86, 1)',
+                        'rgba(75, 192, 192, 1)',
+                        'rgba(153, 102, 255, 1)',
+                        'rgba(255, 159, 64, 1)'
+                    ],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                    yAxes: [{
+                        ticks: {
+                            beginAtZero:true
+                        }
+                    }]
+                }
+            }
+        });
+
+        var mySkills = new Chart(mySkills, {
+            type: 'polarArea',
+            data: {
+                labels: ["Laravel", "Yaf", "thinkphp", "yii2.0"],
+                datasets: [{
+                    label: '技能展示',
+                    data: [20, 15, 15, 15],
+                    backgroundColor: [
+                        'rgba(255, 99, 132, 0.2)',
+                        'rgba(54, 162, 235, 0.2)',
+                        'rgba(255, 206, 86, 0.2)',
+                        'rgba(75, 192, 192, 0.2)',
+                    ],
+                    borderColor: [
+                        'rgba(255,99,132,1)',
+                        'rgba(54, 162, 235, 1)',
+                        'rgba(255, 206, 86, 1)',
+                        'rgba(75, 192, 192, 1)',
+                    ],
+                    borderWidth: 1
+                }]
+            },
+            options: {}
+        });
+    </script>
 @endsection

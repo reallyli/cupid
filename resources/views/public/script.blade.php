@@ -6,3 +6,5 @@
 <script src="{{asset("semantic/out/semantic.min.js")}}"></script>
 <!--dist-main-->
 <script src="{{asset("bundle.js")}}"></script>
+<!--chartjs-->
+<script src="{{asset("node_modules/chart.js/dist/Chart.min.js")}}"></script>

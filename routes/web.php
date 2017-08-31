@@ -19,3 +19,7 @@ Route::get('/login', function () {
     return view('login');
 });
 
+// Front route
+Route::group(['prefix' => 'front'], function(){
+    Route::get("getSkills", ['as' => 'front.getSkills', 'uses' => 'Front\IndexController@mySkillsChart']);
+});

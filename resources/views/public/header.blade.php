@@ -10,6 +10,8 @@
     <!--bootstrap css-->
     <link rel="stylesheet" type="text/css" href="{{asset("bootstrap-3.3.7-dist/css/bootstrap.min.css")}}" >
 
+    <link rel="stylesheet" href="{{asset("node_modules/animate.css/animate.min.css")}}">
+
     @yield('css')
 
 </head>
